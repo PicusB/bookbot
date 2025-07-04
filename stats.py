@@ -7,16 +7,15 @@ def count_characters(book_text_as_string):
     book_text_as_string = book_text_as_string.lower()
     letter_dictionary = []
     for character in book_text_as_string:
-        if len(letter_dictionary)>=100:
-            break
-        char_found = False
-        for entries in letter_dictionary:
-            if entries["char"]==character:
-                entries["num"]+=1
-                char_found = True
-                break
-        if not char_found:    
-            letter_dictionary.append({"char" : character, "num" : 1})
+        if character.isalpha():
+            char_found = False
+            for entries in letter_dictionary:
+                if entries["char"]==character:
+                    entries["num"]+=1
+                    char_found = True
+                    break
+            if not char_found:    
+                letter_dictionary.append({"char" : character, "num" : 1})
     return letter_dictionary
 
 def sort_on(items):

@@ -13,6 +13,6 @@ def main():
     book_word_count = count_words(book_text)
     print(f"{book_word_count} words found in the document")
     letter_dictionary = count_characters(book_text)
-    print(sort_character_dictionary(letter_dictionary))
+    printreport(book_word_count, sort_character_dictionary(letter_dictionary), "books/frankenstein.txt")
 
 main()
